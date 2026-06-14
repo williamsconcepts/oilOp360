@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OilOps360 | Contractors</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="dashboard.html" class="brand">
+        <span class="brand-mark">O</span>
+        <span>OilOps360</span>
+      </a>
+      <nav class="nav-list" aria-label="Primary">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="contractors.html" class="active">Contractors</a>
+        <a href="assets.html">Assets</a>
+        <a href="dashboard.html#reports">Reports</a>
+        <button type="button" data-logout>Logout</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Contractor compliance</p>
+          <h1>Contractor Management</h1>
+        </div>
+        <button class="primary-action" id="newContractorBtn">New contractor</button>
+      </header>
+
+      <section class="toolbar">
+        <label class="search-field">
+          Search
+          <input type="search" id="contractorSearch" placeholder="Company, contact, scope">
+        </label>
+        <label>
+          Status
+          <select id="contractorStatusFilter">
+            <option value="All">All</option>
+            <option value="Compliant">Compliant</option>
+            <option value="Pending">Pending</option>
+            <option value="Expired">Expired</option>
+          </select>
+        </label>
+        <button class="secondary-action" id="exportContractors">Export report</button>
+      </section>
+
+      <section class="split-view">
+        <form class="panel record-form" id="contractorForm">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Record</p>
+              <h2 id="contractorFormTitle">Add Contractor</h2>
+            </div>
+          </div>
+          <input type="hidden" id="contractorId">
+          <label>Company<input id="company" required></label>
+          <label>Contact<input id="contact" required></label>
+          <label>Scope<select id="scope"><option>Drilling</option><option>Maintenance</option><option>Transport</option><option>HSE Services</option></select></label>
+          <label>Status<select id="contractorStatus"><option>Compliant</option><option>Pending</option><option>Expired</option></select></label>
+          <label>Expiry date<input type="date" id="expiry" required></label>
+          <label>Documents<input type="file" id="documents" multiple></label>
+          <div class="document-chips" id="documentChips"></div>
+          <div class="form-actions">
+            <button type="submit" class="primary-action">Save</button>
+            <button type="button" class="secondary-action" id="resetContractorForm">Clear</button>
+          </div>
+        </form>
+
+        <section class="panel table-panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Scope</th>
+                  <th>Status</th>
+                  <th>Documents</th>
+                  <th>Expiry</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="contractorTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/contractors.js"></script>
+</body>
+</html>

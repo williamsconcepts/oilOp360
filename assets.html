@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OilOps360 | Assets</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="dashboard.html" class="brand">
+        <span class="brand-mark">O</span>
+        <span>OilOps360</span>
+      </a>
+      <nav class="nav-list" aria-label="Primary">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="contractors.html">Contractors</a>
+        <a href="assets.html" class="active">Assets</a>
+        <a href="dashboard.html#reports">Reports</a>
+        <button type="button" data-logout>Logout</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Asset inspection</p>
+          <h1>Asset Management</h1>
+        </div>
+        <button class="primary-action" id="newAssetBtn">New asset</button>
+      </header>
+
+      <section class="toolbar">
+        <label class="search-field">
+          Search
+          <input type="search" id="assetSearch" placeholder="Asset, location, inspector">
+        </label>
+        <label>
+          Condition
+          <select id="assetConditionFilter">
+            <option value="All">All</option>
+            <option value="Ready">Ready</option>
+            <option value="Due">Due</option>
+            <option value="Critical">Critical</option>
+          </select>
+        </label>
+        <button class="secondary-action" id="exportAssets">Export report</button>
+      </section>
+
+      <section class="split-view">
+        <form class="panel record-form" id="assetForm">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Inspection record</p>
+              <h2 id="assetFormTitle">Add Asset</h2>
+            </div>
+          </div>
+          <input type="hidden" id="assetId">
+          <label>Asset name<input id="assetName" required></label>
+          <label>Type<select id="assetType"><option>Wellhead</option><option>Pump</option><option>Valve</option><option>Storage Tank</option><option>Generator</option></select></label>
+          <label>Location<input id="location" required></label>
+          <label>Inspector<input id="inspector" required></label>
+          <label>Condition<select id="condition"><option>Ready</option><option>Due</option><option>Critical</option></select></label>
+          <label>Last inspection<input type="date" id="lastInspection" required></label>
+          <label>Next inspection<input type="date" id="nextInspection" required></label>
+          <label>Inspection files<input type="file" id="inspectionFiles" multiple></label>
+          <div class="document-chips" id="inspectionFileChips"></div>
+          <label>Notes<textarea id="notes" rows="3"></textarea></label>
+          <div class="form-actions">
+            <button type="submit" class="primary-action">Save</button>
+            <button type="button" class="secondary-action" id="resetAssetForm">Clear</button>
+          </div>
+        </form>
+
+        <section class="panel table-panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th>Location</th>
+                  <th>Condition</th>
+                  <th>Next inspection</th>
+                  <th>Files</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="assetTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/assets.js"></script>
+</body>
+</html>

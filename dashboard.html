@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OilOps360 | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="dashboard.html" class="brand">
+        <span class="brand-mark">O</span>
+        <span>OilOps360</span>
+      </a>
+      <nav class="nav-list" aria-label="Primary">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="contractors.html">Contractors</a>
+        <a href="assets.html">Assets</a>
+        <a href="#reports">Reports</a>
+        <button type="button" data-logout>Logout</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Operations center</p>
+          <h1>Main Dashboard</h1>
+        </div>
+        <div class="user-pill" id="userPill">Compliance Manager</div>
+      </header>
+
+      <section class="kpi-grid" aria-label="Dashboard metrics">
+        <article class="kpi-card">
+          <span>Total Contractors</span>
+          <strong id="totalContractors">0</strong>
+          <small id="compliantContractors">0 compliant</small>
+        </article>
+        <article class="kpi-card">
+          <span>Total Assets</span>
+          <strong id="totalAssets">0</strong>
+          <small id="criticalAssets">0 critical</small>
+        </article>
+        <article class="kpi-card">
+          <span>Pending Documents</span>
+          <strong id="pendingDocs">0</strong>
+          <small>contractor files</small>
+        </article>
+        <article class="kpi-card">
+          <span>Recent Inspections</span>
+          <strong id="recentInspections">0</strong>
+          <small>last 30 days</small>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Contractor compliance</p>
+              <h2>Document Status</h2>
+            </div>
+            <a href="contractors.html" class="text-link">Manage</a>
+          </div>
+          <div class="status-list" id="contractorStatusList"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Asset inspection</p>
+              <h2>Inspection Queue</h2>
+            </div>
+            <a href="assets.html" class="text-link">Inspect</a>
+          </div>
+          <div class="status-list" id="assetStatusList"></div>
+        </article>
+      </section>
+
+      <section class="panel" id="reports">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Reporting</p>
+            <h2>Compliance Summary</h2>
+          </div>
+          <button class="secondary-action" id="exportSummary">Export CSV</button>
+        </div>
+        <div class="report-bars">
+          <div>
+            <span>Contractor compliance</span>
+            <meter id="contractorMeter" min="0" max="100" value="0"></meter>
+          </div>
+          <div>
+            <span>Asset readiness</span>
+            <meter id="assetMeter" min="0" max="100" value="0"></meter>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

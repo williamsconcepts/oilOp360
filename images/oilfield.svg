@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Oilfield operations">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#d8e6ed"/>
+      <stop offset="1" stop-color="#7f9aab"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect y="540" width="1200" height="260" fill="#263b47"/>
+  <path d="M0 540 C170 500 310 510 455 535 C625 565 735 495 910 520 C1030 537 1110 570 1200 548 L1200 800 L0 800 Z" fill="#182831"/>
+  <g fill="none" stroke="#111c24" stroke-width="18" stroke-linecap="round">
+    <path d="M160 548 L280 210 L400 548"/>
+    <path d="M205 420 H356"/>
+    <path d="M238 325 H322"/>
+    <path d="M280 210 L530 548"/>
+    <path d="M400 548 L680 548"/>
+    <path d="M735 548 L810 305 L885 548"/>
+    <path d="M765 450 H856"/>
+    <path d="M790 375 H832"/>
+  </g>
+  <g fill="#0c6b58">
+    <rect x="612" y="505" width="130" height="43"/>
+    <rect x="870" y="500" width="165" height="48"/>
+    <rect x="1015" y="460" width="35" height="88"/>
+  </g>
+  <g fill="#f4b24c" opacity="0.9">
+    <circle cx="950" cy="195" r="62"/>
+    <rect x="500" y="480" width="58" height="68"/>
+  </g>
+</svg>
